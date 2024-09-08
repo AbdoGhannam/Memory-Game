@@ -1,0 +1,263 @@
+@import url("https://fonts.cdnfonts.com/css/games");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Games", sans-serif;
+  letter-spacing: 8px;
+  font-weight: 900;
+}
+
+.app-back {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(
+    112.1deg,
+    rgb(32, 38, 57) 11.4%,
+    rgb(63, 76, 119) 70.2%
+  );
+}
+
+.app {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  translate: 55% -50%;
+  display: grid;
+  gap: 10px;
+  transition: translate 0.8s, opacity 0.8s, border-color 1s;
+  padding: 20px;
+}
+
+.result-screen {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  translate: 50% -50%;
+  height: 400px;
+  width: 400px;
+  color: white;
+  padding: 60px 40px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.result-screen h1 {
+  margin-bottom: 30px;
+}
+
+.result-screen button {
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s, letter-spacing 0.2s;
+  letter-spacing: 8px;
+}
+/* 
+.start-again {
+  top: 40%;
+  right: 95px;
+}
+
+.main-menu {
+  top: 60%;
+  right: 110px;
+} */
+
+.result-screen button:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 12px;
+}
+
+.app,
+.result-screen {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5.3px);
+  /* backdrop-filter: blur(1px); */
+  -webkit-backdrop-filter: blur(5.3px);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 95px;
+  height: 95px;
+  perspective: 2000px;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  transition: opacity 0.35s;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  translate: 50% -50%;
+  color: black;
+  transition: translate 0.2s;
+}
+
+.flip-card:hover .flip-card-front img {
+  translate: 50% -60%;
+  width: 65px;
+  height: 65px;
+}
+
+.landing-page-container {
+  transition: transform 0.8s, opacity 0.5s;
+}
+
+.landing-page {
+  position: fixed;
+  width: 60%;
+  top: 30px;
+  right: 50%;
+  translate: 50% 0%;
+  color: white;
+}
+
+.landing-page h1 {
+  font-size: 52px;
+  letter-spacing: 14px;
+}
+
+.landing-page h3 {
+  font-size: 32px;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
+}
+
+.difficulty-sec {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.difficulty-sec h3 {
+  margin-bottom: 10px;
+}
+
+.category-sec h3 {
+  margin-bottom: 80px;
+}
+
+label {
+  cursor: pointer;
+  width: 0;
+  transition: letter-spacing 0.3s, transform 0.3s, opacity 0.2s;
+  opacity: 0.7;
+}
+
+label:hover {
+  letter-spacing: 16px;
+}
+
+input {
+  display: none;
+}
+
+.imgs-categories {
+  display: flex;
+  gap: 80px;
+}
+
+.imgs-categories img {
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.imgs-categories .coding {
+  transform: translateY(-40px);
+}
+
+.easy {
+  color: lightgreen;
+  opacity: 1;
+  transform: translateX(30px);
+}
+
+.normal {
+  color: yellow;
+}
+
+.hard {
+  color: lightcoral;
+}
+
+.start-btn {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 26px;
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: letter-spacing 0.2s, color 0.2s, font-size 0.2s;
+}
+
+.start-btn:hover {
+  letter-spacing: 16px;
+  color: white;
+  font-size: 28px;
+}
+
+.timer {
+  width: calc(var(--width, 0) * 1%);
+  min-width: 1px;
+  max-width: 100%;
+  height: 8px;
+  transition: background-color 2s;
+}
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  background: black url(images/preloader.gif) no-repeat center center;
+  background-size: 10%;
+}

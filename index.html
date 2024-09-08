@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Memory GAME</title>
+  </head>
+  <body>
+    <div class="preloader"></div>
+    <div class="app-back">
+      <div class="landing-page-container">
+        <main class="landing-page">
+          <h1>Memory Game</h1>
+          <section class="difficulty-sec">
+            <h3>Select difficulty</h3>
+            <input type="radio" name="difficulty" id="easy" checked />
+            <label for="easy" class="easy difficulty-label">Easy</label>
+            <input type="radio" name="difficulty" id="normal" />
+            <label for="normal" class="normal difficulty-label">Normal</label>
+            <input type="radio" name="difficulty" id="hard" />
+            <label for="hard" class="hard difficulty-label">Hard</label>
+          </section>
+          <section class="category-sec">
+            <h3>Select images category</h3>
+            <div class="imgs-categories">
+              <img
+                class="coding choosen"
+                src="images/categories-icons/coding.png"
+                id="coding"
+              />
+              <img
+                class="animal"
+                src="images/categories-icons/animal.png"
+                id="animals"
+              />
+
+              <img
+                class="food"
+                src="images/categories-icons/food.png"
+                id="food"
+              />
+            </div>
+          </section>
+          <button class="start-btn">Start</button>
+        </main>
+      </div>
+      <div class="timer" style="--width: 0"></div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
